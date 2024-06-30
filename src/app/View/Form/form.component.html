@@ -13,6 +13,9 @@
             formControlName="cep"
             placeholder="00000-000"
           />
+          <mat-error *ngIf="formGroup.get('cep')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
@@ -22,16 +25,25 @@
             formControlName="logradouro"
             placeholder="Logradouro"
           />
+          <mat-error *ngIf="formGroup.get('logradouro')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Complemento</mat-label>
           <input matInput formControlName="complemento" placeholder="0.000" />
+          <mat-error *ngIf="formGroup.get('complemento')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Bairro</mat-label>
           <input matInput formControlName="bairro" placeholder="Bairro" />
+          <mat-error *ngIf="formGroup.get('bairro')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
@@ -41,26 +53,41 @@
             formControlName="localidade"
             placeholder="Localidade"
           />
+          <mat-error *ngIf="formGroup.get('localidade')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>UF</mat-label>
           <input matInput formControlName="uf" placeholder="UF" />
+          <mat-error *ngIf="formGroup.get('uf')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Unidade</mat-label>
           <input matInput formControlName="unidade" placeholder="Unidade" />
+          <mat-error *ngIf="formGroup.get('unidade')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>DDD</mat-label>
           <input matInput formControlName="ddd" placeholder="DDD" />
+          <mat-error *ngIf="formGroup.get('ddd')?.hasError('required')">
+            Campo obrigatório!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>GIA</mat-label>
           <input matInput formControlName="gia" placeholder="GIA" />
+          <mat-error *ngIf="formGroup.get('gia')?.hasError('required')">
+            GIA é obrigatório
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
@@ -72,6 +99,12 @@
           <mat-label>SIAFI</mat-label>
           <input matInput formControlName="siafi" placeholder="SIAFI" />
         </mat-form-field>
+        <app-save-button
+        mat-button
+        (click)="save()"
+        [disabled]="formGroup.invalid"
+        ></app-save-button
+      >
       </div>
     </form>
   </mat-card-content>

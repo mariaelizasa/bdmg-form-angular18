@@ -10,9 +10,9 @@ import { GetFormService } from "../../service/get-form.service";
 import { CommonModule } from "@angular/common";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from "@angular/material/card";
 import { formFields } from "../../models/formFields";
-
+import { SaveButtonComponent } from "../../components/SaveButton/button.component";
 
 @Component({
   selector: "app-form",
@@ -24,6 +24,7 @@ import { formFields } from "../../models/formFields";
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    SaveButtonComponent
   ],
   templateUrl: "./form.component.html",
   styleUrl: "./form.component.scss",
@@ -67,5 +68,14 @@ export class FormComponent implements OnInit {
         console.error("Erro ao carregar o formulário:", error);
       }
     );
+  }
+
+  save(): void {
+    if (this.formGroup.valid) {
+      localStorage.setItem("formData", JSON.stringify(this.formGroup.value));
+      console.log("Formulário salvo!");
+    } else {
+      console.error("Formulário inválido.");
+    }
   }
 }
