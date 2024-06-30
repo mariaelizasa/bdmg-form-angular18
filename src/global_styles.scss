@@ -1,6 +1,7 @@
 /* Add application styles & imports to this file! */
 @use "@angular/material" as mat;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+ @import './app/scss/variables.scss';
 
 $theme: mat.define-theme(
   (
@@ -15,12 +16,7 @@ body {
   margin: 0;
   padding: 30px;
   height: 100%;
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  background: $background-color
 }
 
 html {

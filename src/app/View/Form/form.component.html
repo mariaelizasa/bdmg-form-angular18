@@ -1,7 +1,6 @@
 <mat-card class="custom-card">
-  <mat-card-header class="custom-header">
-    <mat-card-title class="custom-title">Formulário</mat-card-title>
-  </mat-card-header>
+  <app-header [title]="'Formulário BDMG'"></app-header>
+
   <mat-card-content>
     <form [formGroup]="formGroup" *ngIf="form">
       <div class="form-fields">
@@ -32,7 +31,12 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Complemento</mat-label>
-          <input matInput formControlName="complemento" placeholder="0.000" />
+          <input
+            matInput
+            mask="0.000"
+            formControlName="complemento"
+            placeholder="0.000"
+          />
           <mat-error *ngIf="formGroup.get('complemento')?.hasError('required')">
             Campo obrigatório!
           </mat-error>
@@ -76,7 +80,7 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>DDD</mat-label>
-          <input matInput formControlName="ddd" placeholder="DDD" />
+          <input matInput mask="(00)" formControlName="ddd" placeholder="DDD" />
           <mat-error *ngIf="formGroup.get('ddd')?.hasError('required')">
             Campo obrigatório!
           </mat-error>
@@ -100,11 +104,10 @@
           <input matInput formControlName="siafi" placeholder="SIAFI" />
         </mat-form-field>
         <app-save-button
-        mat-button
-        (click)="save()"
-        [disabled]="formGroup.invalid"
-        ></app-save-button
-      >
+          mat-button
+          (click)="save()"
+          [disabled]="formGroup.invalid"
+        ></app-save-button>
       </div>
     </form>
   </mat-card-content>

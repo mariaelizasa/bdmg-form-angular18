@@ -13,6 +13,10 @@ import { MatInputModule } from "@angular/material/input";
 import { MatCardModule } from "@angular/material/card";
 import { formFields } from "../../models/formFields";
 import { SaveButtonComponent } from "../../components/SaveButton/button.component";
+import { HeaderComponent } from "../../components/header/header.component";
+import { NgxMaskDirective, NgxMaskPipe } from "ngx-mask";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-form",
@@ -24,7 +28,11 @@ import { SaveButtonComponent } from "../../components/SaveButton/button.componen
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    SaveButtonComponent
+    SaveButtonComponent,
+    HeaderComponent,
+    NgxMaskDirective,
+    NgxMaskPipe,
+    MatSnackBarModule,
   ],
   templateUrl: "./form.component.html",
   styleUrl: "./form.component.scss",
@@ -35,13 +43,15 @@ export class FormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private getFormService: GetFormService
+    private getFormService: GetFormService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
     this.initForm();
     this.fillForm();
   }
+
   private initForm(): void {
     this.formGroup = this.formBuilder.group(formFields);
   }
@@ -73,9 +83,11 @@ export class FormComponent implements OnInit {
   save(): void {
     if (this.formGroup.valid) {
       localStorage.setItem("formData", JSON.stringify(this.formGroup.value));
-      console.log("Formulário salvo!");
+      this.snackBar.open("Formulário salvo com sucesso!", "Fechar", {
+        duration: 3000,
+      });
     } else {
-      console.error("Formulário inválido.");
+      console.error("Formulário inválido");
     }
   }
 }
