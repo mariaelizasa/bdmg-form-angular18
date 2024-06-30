@@ -1,4 +1,4 @@
 export const environment = {
-    production: true,
-    apiUrl: 'http://localhost:3000/api'
+    production: false,
+    apiUrl: 'https://viacep.com.br/ws/30160907/json/'
   };

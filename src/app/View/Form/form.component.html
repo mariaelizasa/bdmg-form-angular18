@@ -1,0 +1,78 @@
+<mat-card class="custom-card">
+  <mat-card-header class="custom-header">
+    <mat-card-title class="custom-title">Formulário</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="formGroup" *ngIf="form">
+      <div class="form-fields">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>CEP</mat-label>
+          <input
+            matInput
+            mask="00000-000"
+            formControlName="cep"
+            placeholder="00000-000"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Logradouro</mat-label>
+          <input
+            matInput
+            formControlName="logradouro"
+            placeholder="Logradouro"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Complemento</mat-label>
+          <input matInput formControlName="complemento" placeholder="0.000" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="bairro" placeholder="Bairro" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Localidade</mat-label>
+          <input
+            matInput
+            formControlName="localidade"
+            placeholder="Localidade"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>UF</mat-label>
+          <input matInput formControlName="uf" placeholder="UF" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Unidade</mat-label>
+          <input matInput formControlName="unidade" placeholder="Unidade" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>DDD</mat-label>
+          <input matInput formControlName="ddd" placeholder="DDD" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>GIA</mat-label>
+          <input matInput formControlName="gia" placeholder="GIA" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>IBGE</mat-label>
+          <input matInput formControlName="ibge" placeholder="IBGE" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>SIAFI</mat-label>
+          <input matInput formControlName="siafi" placeholder="SIAFI" />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
