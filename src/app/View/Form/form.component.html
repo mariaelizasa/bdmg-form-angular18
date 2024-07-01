@@ -11,6 +11,7 @@
             mask="00000-000"
             formControlName="cep"
             placeholder="00000-000"
+            aria-label="CEP"
           />
           <mat-error *ngIf="formGroup.get('cep')?.hasError('required')">
             Campo obrigatório!
@@ -23,6 +24,7 @@
             matInput
             formControlName="logradouro"
             placeholder="Logradouro"
+            aria-label="Logradouro"
           />
           <mat-error *ngIf="formGroup.get('logradouro')?.hasError('required')">
             Campo obrigatório!
@@ -36,6 +38,7 @@
             mask="0.000"
             formControlName="complemento"
             placeholder="0.000"
+            aria-label="Complemento"
           />
           <mat-error *ngIf="formGroup.get('complemento')?.hasError('required')">
             Campo obrigatório!
@@ -44,7 +47,12 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Bairro</mat-label>
-          <input matInput formControlName="bairro" placeholder="Bairro" />
+          <input
+            matInput
+            formControlName="bairro"
+            placeholder="Bairro"
+            aria-label="Bairro"
+          />
           <mat-error *ngIf="formGroup.get('bairro')?.hasError('required')">
             Campo obrigatório!
           </mat-error>
@@ -56,6 +64,7 @@
             matInput
             formControlName="localidade"
             placeholder="Localidade"
+            aria-label="Localidade"
           />
           <mat-error *ngIf="formGroup.get('localidade')?.hasError('required')">
             Campo obrigatório!
@@ -64,7 +73,12 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>UF</mat-label>
-          <input matInput formControlName="uf" placeholder="UF" />
+          <input
+            matInput
+            formControlName="uf"
+            placeholder="UF"
+            aria-label="UF"
+          />
           <mat-error *ngIf="formGroup.get('uf')?.hasError('required')">
             Campo obrigatório!
           </mat-error>
@@ -72,7 +86,12 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Unidade</mat-label>
-          <input matInput formControlName="unidade" placeholder="Unidade" />
+          <input
+            matInput
+            formControlName="unidade"
+            placeholder="Unidade"
+            aria-label="Unidade"
+          />
           <mat-error *ngIf="formGroup.get('unidade')?.hasError('required')">
             Campo obrigatório!
           </mat-error>
@@ -80,7 +99,13 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>DDD</mat-label>
-          <input matInput mask="(00)" formControlName="ddd" placeholder="DDD" />
+          <input
+            matInput
+            mask="(00)"
+            formControlName="ddd"
+            placeholder="DDD"
+            aria-label="DDD"
+          />
           <mat-error *ngIf="formGroup.get('ddd')?.hasError('required')">
             Campo obrigatório!
           </mat-error>
@@ -88,7 +113,12 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>GIA</mat-label>
-          <input matInput formControlName="gia" placeholder="GIA" />
+          <input
+            matInput
+            formControlName="gia"
+            placeholder="GIA"
+            aria-label="GIA"
+          />
           <mat-error *ngIf="formGroup.get('gia')?.hasError('required')">
             GIA é obrigatório
           </mat-error>
@@ -96,12 +126,22 @@
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>IBGE</mat-label>
-          <input matInput formControlName="ibge" placeholder="IBGE" />
+          <input
+            matInput
+            formControlName="ibge"
+            placeholder="IBGE"
+            aria-label="IBGE"
+          />
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>SIAFI</mat-label>
-          <input matInput formControlName="siafi" placeholder="SIAFI" />
+          <input
+            matInput
+            formControlName="siafi"
+            placeholder="SIAFI"
+            aria-label="SIAFI"
+          />
         </mat-form-field>
         <app-save-button
           mat-button
