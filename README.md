@@ -1,7 +1,5 @@
 <h1 align="center">📜 Form<h1/>
 
-![image](https://github.com/mariaelizasa/registration-app/assets/49694866/e3675e15-7d28-483b-a531-1cc61db164c3)
-
 ## Como executar / How to run
 
 Instale as dependências / Install all the dependencies:
